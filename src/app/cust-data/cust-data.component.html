@@ -1,0 +1,68 @@
+<style>
+  .connection
+  {
+    background-color:palevioletred;
+    height: 100px;
+    width: 400px;
+  }
+</style>
+
+
+
+
+<div class="centure">
+  <div class="col-md-4">
+      <ul class="nav flex-column">
+          <li class="nav-item">
+              <a routerLink="/callDetail">Call Details</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/billDetail">Bill Details</a>
+          </li> 
+          <li class="nav-item">
+            <a routerLink="/smsDetail">Sms Details</a>
+        </li>
+        </ul>
+  </div>
+  <div class="col-md-4" >
+
+      <h2>Customer Profile</h2>
+
+      <div *ngIf="selectedCustomer==null" class="connection" >
+              <div><strong>Customer_Id: </strong>{{customer.customer_Id}}</div>
+              <div><strong>       Name: </strong>{{customer.name}}</div>
+              <div><strong>      Email:</strong>{{customer.email}}</div>
+              <div><strong>    Address:</strong>{{customer.address}}</div>
+              <div><strong>  Mobile_No:</strong>{{customer.mobile_No}}</div>
+              <h2>Connection Details
+              </h2>
+              <div class="connection" *ngFor="let item of customer.conList" >
+                <br>
+                  <div class="col-md-6"><strong>Tarrif Plan:{{item.tarrif_Plan}}</strong></div>
+                  <br>
+                  <div class="col-md-6"><strong>Status:{{item.status}}</strong></div>
+                  <br>
+                  <div class="col-md-6"><strong>Connection_Id:{{item.connection_Id}}</strong></div>
+                </div>  
+      </div>
+            
+  </div>
+  <div class="col-md-4">
+      <div class="data">
+          <div>
+             <label for="">Enter CustomerID</label><input type="text" [(ngModel)]="conid" >
+             <br>
+              <button (click)="getProfile()" class="btn btn-warning btn-edit">Submit</button>
+          </div>
+       
+      </div>
+  </div>
+</div>
+
+<hr style="color:red;">      
+
+<div>
+   <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

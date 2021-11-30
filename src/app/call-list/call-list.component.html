@@ -1,0 +1,73 @@
+<div class="data">
+  <div>
+    <label for="">Enter Connection ID To See Call Details</label>
+    <input type="text" [(ngModel)]="conId">
+    <br>
+    <button (click)="getCallList()" class="btn btn-warning btn-edit">Submit</button>
+  </div>
+</div>
+<hr style="color:red;">
+<div *ngIf="selectedConnection==null">
+</div>
+<h3>Call Details</h3>
+<!-- <ul class="list-group" *ngIf="selectedConnection == null">
+  <li class="list-group-item" *ngFor="let callDetail of callDetails">
+    <div>
+      <strong>Date Of Call: </strong>{{callDetail.dateOfCall}}</div>
+    <div>
+      <strong> Call Made No: </strong>{{callDetail.callMadeNo}}</div>
+    <div>
+      <strong> Duration Of Call:</strong>{{callDetails.duration}}</div>
+    <div>
+      <strong> Call Id:</strong>{{callDetail.call_Id}}</div>
+    <div>
+      <strong> Connection_Id:</strong>{{callDetail.connection_id}}</div>
+  </li>
+</ul> -->
+
+<table border="1px" class="table table-hover">
+  <tr>
+    <td>
+      <thead>
+        <strong>Date Of Call: </strong>
+      </thead>
+    </td>
+    <td>
+      <thead>
+        <strong>Call Made No: </strong>
+      </thead>
+    </td>
+    <!-- <td>
+      <thead>
+        <strong> Duration Of Call: </strong>
+      </thead>
+    </td> -->
+    <td>
+      <thead>
+        <strong> Call Id: </strong>
+      </thead>
+    </td>
+    <td>
+      <thead>
+        <strong> Connection_Id: </strong>
+      </thead>
+    </td>
+    <td>
+        <thead>
+          <strong> Call Charges: </strong>
+        </thead>
+      </td>
+  </tr>
+  <tr *ngFor="let callDetail of callDetails">
+  
+    <td>{{callDetail.dateOfCall}}</td>
+    <td>{{callDetail.callMadeNo}}</td>
+    <!-- <td>{{callDetails.duration}}</td> -->
+    <td>{{callDetail.call_Id}}</td>
+    <td>{{callDetail.connection_id}}</td>
+    <td>{{callDetail.charges}}</td>
+    
+  </tr>
+
+
+</table>

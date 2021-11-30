@@ -1,0 +1,35 @@
+<h1>Debit</h1>
+
+<div class="col-md-2"></div>
+<div class="col-md-6">
+<div class="form"  > 
+        <div class="form-group" >
+                <label for="">Chosse Bank</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <select  (change)="selectBank($event)">
+                    <option></option>
+                        <option value="boi"> Bank of India</option>
+                        <option value="bom"> Bank of Maharshtra</option>
+                        <option value="sbi"> State Bank Of India</option>
+                        <option value="bob"> Bank of Badoda</option>
+                      </select>
+                </div>
+                
+        <div>
+             <div class="form-group">
+            <label for="">Card NO</label>
+            <input [(ngModel)]="card_no" type="number" class="form-control">
+        </div>
+             
+        <div class="form-group">
+            <label for="">CVV</label>
+            <input [(ngModel)]="cvv" type="number" class="form-control">
+        </div>
+       
+        <div class="form-group">
+            <button (click)="pay()" class="btn btn-info">Pay</button>
+         </div>
+        </div>
+
+    </div>
+    <img src="/assets/images/debit.jpeg" alt="">
+</div>

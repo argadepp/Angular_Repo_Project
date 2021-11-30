@@ -1,0 +1,15 @@
+.div-center {
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    right: 0; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 30px;
+    background-color: bisque;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 10px 20px 1px #c4c7ca;
+    box-shadow: 10px 10px 20px 1px #c4c7ca;
+}

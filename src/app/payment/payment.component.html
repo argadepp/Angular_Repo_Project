@@ -1,0 +1,18 @@
+<form>
+  <div class="centure" class="form-check">
+      <h1>Cash Paayment</h1>
+      
+   <div *ngFor="let pay of payment" >
+     <input type="radio"
+      name="paymentMethod" 
+      value="{{pay}}"
+      (change)="paymentMethod($event)" 
+      class="form-check-input">
+      <i>{{pay}}</i>     
+   </div>
+   <input type="submit" (click)="pay()" value="Submit">
+   </div>
+
+<router-outlet></router-outlet>
+</form>
+

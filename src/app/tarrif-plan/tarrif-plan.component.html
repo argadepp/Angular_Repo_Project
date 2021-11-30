@@ -1,0 +1,12 @@
+<h3>Tarrif List</h3>
+<div class="c">
+
+<ul class="list-group"   class="list-group-itemtext"   *ngIf="selectedPlan == null">
+    <li class="list-group-item" *ngFor="let plan of plans">
+        <div><strong>Plan Name: </strong>{{plan.plan_Name}}</div>
+        <div><strong> Call_Charges: </strong>{{plan.call_Charges}}</div>
+        <div><strong>  SMS_Charges:</strong>{{plan.sms_Charges}}</div>        
+    </li>
+</ul>
+
+</div>

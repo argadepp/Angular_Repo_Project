@@ -1,0 +1,17 @@
+<div class="data">
+  <div>
+     <label for="">Enter Connection ID To See Sms Details</label><input type="text" [(ngModel)]="conId" >
+     <br>
+      <button (click)="getSmsList()" class="btn btn-warning btn-edit">Submit</button>
+  </div>
+</div>
+<hr style="color:red;">
+<div *ngIf="selectedConnection==null" >
+</div>
+<h3>Sms List</h3>
+<ul class="list-group" *ngIf="selectConnection == null">
+    <li class="list-group-item" *ngFor="let smsDetail of smsDetails">
+      <div><strong>Connection_Id: </strong>{{smsDetail.connection_Id}}</div>
+      <div><strong> Sms Made No: </strong>{{smsDetail.smsMadeNo}}</div>
+      <div><strong>Bill Of Sms:</strong>{{smsDetail.charges}}</div>
+</ul>

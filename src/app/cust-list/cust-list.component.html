@@ -1,0 +1,36 @@
+<h3>Customer List</h3>
+
+<ul class="list-group" *ngIf="selectedCustomer == null">
+    <li class="list-group-item" *ngFor="let customer of customers">
+        <div><strong>Customer_Id: </strong>{{customer.customer_Id}}</div>
+        <div><strong>       Name: </strong>{{customer.name}}</div>
+        <div><strong>      Email:</strong>{{customer.email}}</div>
+        <div><strong>    Address:</strong>{{customer.address}}</div>
+        <div><strong>  Mobile_No:</strong>{{customer.mobile_No}}</div>
+        <button (click)="deleteCusromer(customer.customer_Id)" class="btn btn-danger btn-delete">delete</button>
+        <button (click)="editCustomer(customer)" class="btn btn-warning btn-edit">edit</button>
+    </li>
+</ul>
+
+<div class="form" *ngIf="selectedCustomer != null">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input [(ngModel)]="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input [(ngModel)]="email" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+                <label for="">Address</label>
+                <input [(ngModel)]="address" type="text" class="form-control">
+            </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input [(ngModel)]="password" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <button (click)="updateCust()" class="btn btn-success">Save</button>
+            <button (click)="cancelUpdate()" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>

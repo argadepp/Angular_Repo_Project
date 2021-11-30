@@ -1,0 +1,15 @@
+<h3>Bill Details</h3>
+<div class="data">
+    <div>
+       <label for="">Enter Connection ID To See Bill Details</label><input type="text" [(ngModel)]="conId" >
+       <br>
+        <button (click)=" getbillList()" class="btn btn-warning btn-edit">Submit</button>
+    </div>
+  </div>
+<ul class="list-group" *ngIf="selectedBill == null">
+    <li class="list-group-item" *ngFor="let billData of billDatas">
+        <div><strong>Bill Id: </strong>{{billData.id}}</div>
+        <div><strong>Connection_Id:</strong>{{billData.connection_Id}}</div>
+        <div><strong>Total Charges:</strong>{{billData.charges}}</div>
+    </li>
+</ul>
